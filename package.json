@@ -1,0 +1,20 @@
+{
+    "name": "eolica-agent-kit",
+    "version": "1.0.0",
+    "description": "AI Agent templates with Skills, Agents, and Workflows tailored for Eolica-Web",
+    "main": "bin/init.js",
+    "bin": {
+        "eolica-agent-kit": "./bin/init.js"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "eolica-web",
+        "ai",
+        "agents",
+        "laravel"
+    ],
+    "author": "Eolica-Web",
+    "license": "MIT"
+}
