@@ -21,9 +21,11 @@ Make sure the `.agent` directory is **NOT added to `.gitignore`** if you want de
 
 ### Specialized Agents (`.agent/agents/`)
 - `livewire-expert`: Master of anonymous components, Blade UI, and Tailwind CSS v4.
+- `filament-expert`: Rapidly builds internal admin panels using Filament PHP v5.
 - `database-architect`: Focuses on Eloquent, migrations, and schema design.
 - `code-reviewer`: Ready to enforce standards and security checks.
 - `qa-engineer`: Writes unbreakable Pest tests with Mockery.
+- `laravel-backend-engineer`: Core architecture, routing, queues, and service container expert.
 
 ### Global Rules (`.agent/rules/`)
 - `EOLICA_WEB.md`: Enforces strict types, specific PHP versions, Livewire rules over traditional React/Vue, and standard architecture.
@@ -41,3 +43,5 @@ Rules on:
 - PHP Testing Stack (Pest + Mockery)
 - PHP Coding Standard (ECS)
 - API Integrations (PSR standards setup)
+- Pest Architecture Testing (`arch()` enforcement)
+- Domain-Driven Actions (DDD, CQRS, DTOs)

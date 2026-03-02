@@ -20,3 +20,7 @@ When writing or modifying PHP code for Eolica-Web repositories, you MUST adhere 
 
 4. **Refactoring**:
    - We use `rector/rector` for automated refactoring and upgrades.
+
+5. **Clean Code (No Comments, No Emojis)**:
+   - **Self-Explanatory**: Do not use inline comments. Write code that explains itself using highly descriptive variable, method, and event names.
+   - **No Emojis**: Emojis are strictly forbidden in the codebase, preventing unprofessional and inconsistent formatting.

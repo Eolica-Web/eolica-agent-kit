@@ -1,4 +1,4 @@
-    ,---
+---
 name: Eolica-Web Tailwind 4 Design
 description: Guidelines for frontend design and using Tailwind CSS v4 at Eolica-Web.
 ---
