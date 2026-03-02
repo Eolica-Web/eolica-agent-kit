@@ -42,3 +42,7 @@ When working on any Eolica-Web website, the following global rules MUST be stric
 ## 6. Clean Code & Readability
 - **Self-Documenting Code**: Do **not** use comments to explain what the code does. Code must be self-explanatory. Variables, functions, events, and class names must be highly descriptive and convey their exact purpose.
 - **No Emojis**: Do **not** use emojis anywhere in the codebase (including commit messages, comments, or output strings) unless strictly required by a specific business feature. Keep the environment professional and clean.
+
+## 7. Development Environment
+- **Standard Tooling**: In projects that include a `docker-compose.yml`, **Laravel Sail** is the mandatory development environment.
+- **Inside Containers**: Always execute development commands (Artisan, Composer, PHP, NPM) via Sail to ensure environment parity.

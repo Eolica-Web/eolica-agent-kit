@@ -45,7 +45,6 @@ test('eolica-agent-kit init script', async (t) => {
 
         const agentsDir = path.join(targetAgentDir, 'agents');
         assert.strictEqual(fs.existsSync(agentsDir), true, 'Templates should be copied overriding the dummy folder');
-        // Copying preserves existing files not conflicting
         assert.strictEqual(fs.existsSync(dummyFilePath), true, 'Dummy file should still exist');
     });
 
