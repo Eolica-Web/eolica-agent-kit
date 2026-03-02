@@ -1,6 +1,6 @@
 {
     "name": "eolica-agent-kit",
-    "version": "1.0.4",
+    "version": "1.0.7",
     "description": "AI Agent templates with Skills, Agents, and Workflows tailored for Eolica-Web",
     "main": "bin/init.js",
     "bin": {
