@@ -57,6 +57,3 @@ Always append `{{ $attributes }}` in the primary HTML element of a component. Th
 * **Layouts remain static:** Wrapper files (like `layouts.app`, sidebars, topbars, or generic SEO containers) should be pure Blade. Do NOT inject Livewire logic into layouts unless absolutely strictly necessary. This saves performance overhead.
 * **Component-Scoped interactivity:** Use `<livewire:component-name />` deeper in the view tree, specifically on elements that require heavy backend state (e.g., `<livewire:app.components.create-reservation />`).
 * **Alpine.js for visual state:** Use Alpine (`x-data`, `@click`) to handle dropdowns, modals, and tabs instead of relying on a server roundtrip via Livewire.
-
-## 4. No 3rd-Party Trackers in Content Vistas
-Analytics (Hubspot, GTM, Snowplow, Consent Managers) are never dispersed throughout random pages. They are always consolidated into dedicated Anonymous Blade Components (`<x-web::google-tag-manager.body />`) invoked purely in the main Layout shell (`app.blade.php`).
