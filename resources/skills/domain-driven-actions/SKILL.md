@@ -1,4 +1,5 @@
 ---
+name: domain-driven-actions
 description: Guidelines for implementing Action classes, Data Transfer Objects (DTOs), and Command Query Responsibility Segregation (CQRS) within a Domain-Driven folder structure.
 ---
 
@@ -28,17 +29,18 @@ app/
         └── Repositories/     (Data Access Abstraction)
 ```
 
-*(Note: In Laravel 11/12, you may need to map these namespaces in `composer.json` or ensure PSR-4 autoloading covers `App\Domains\*`).*
+_(Note: In Laravel 11/12, you may need to map these namespaces in `composer.json` or ensure PSR-4 autoloading covers `App\Domains\*`)._
 
 ## 2. The Action Pattern (CQRS 'Commands')
 
 An **Action** class represents a single, highly specific operation that mutates state (a Command in CQRS).
 
 **Rules for Actions:**
-*   **Single Responsibility**: An action does exactly one thing (e.g., `ChargeUserAction`, `RefundInvoiceAction`).
-*   **Naming**: Must end in `Action` and consist of a Verb + Noun.
-*   **Method signature**: Expose a single public method. Prefer exactly `execute()` or `handle()`.
-*   **Dependency Injection**: Resolve dependencies via the Constructor.
+
+- **Single Responsibility**: An action does exactly one thing (e.g., `ChargeUserAction`, `RefundInvoiceAction`).
+- **Naming**: Must end in `Action` and consist of a Verb + Noun.
+- **Method signature**: Expose a single public method. Prefer exactly `execute()` or `handle()`.
+- **Dependency Injection**: Resolve dependencies via the Constructor.
 
 ```php
 <?php
@@ -134,7 +136,7 @@ By moving business logic into Domain Actions and Queries, HTTP Controllers simpl
 public function store(ChargeRequest $request, ChargeUserAction $action)
 {
     $dto = ChargeData::fromRequest($request);
-    
+
     $action->execute($request->user(), $dto);
 
     return redirect()->route('dashboard')->with('success', 'Charged successfully.');

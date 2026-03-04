@@ -1,4 +1,5 @@
 ---
+name: pest-architecture
 description: Advanced guidelines for enforcing Eolica-Web's architectural boundaries using Pest PHP Architecture Testing.
 ---
 
@@ -17,6 +18,7 @@ Pest `arch()` tests must be placed in `tests/Architecture/` or as separate files
 When setting up or expanding the test suite for an Eolica-Web project, ensure the following core rules are implemented:
 
 ### ✅ Strict Typing Enforcement
+
 All PHP files in the application **must** declare strict types.
 
 ```php
@@ -27,6 +29,7 @@ test('strict types are used everywhere')
 ```
 
 ### ✅ Security Presets
+
 Automatically prevent the usage of insecure or legacy PHP functions.
 
 ```php
@@ -35,6 +38,7 @@ test('no insecure php functions are used')
 ```
 
 ### ✅ Clean Debugging
+
 Ensure no debugging code accidentally reaches production.
 
 ```php
@@ -48,6 +52,7 @@ test('no debugging statements are left in code')
 Eolica-Web strictly separates MVC concerns. Enforce these barriers programmatically:
 
 ### 🛑 Controllers Must Not Touch The Database Directly
+
 Controllers should rely on Actions, Services, or the Eloquent Models for complex logic, but they should never write raw SQL or complex business queries themselves.
 
 ```php
@@ -57,6 +62,7 @@ test('controllers do not interact with raw database facade')
 ```
 
 ### 🛑 Models Are Isolated
+
 Eloquent Models should not know about the HTTP layer (Requests, Controllers) or routing.
 
 ```php
@@ -78,7 +84,7 @@ test('core services use psr-18 and not the laravel http facade directly')
 
 ## 5. General Best Practices for Agents
 
-1.  **Iterative Rollout**: If applying this to a legacy Eolica project, start small. Use the `ignoring()` method to bypass existing technical debt while preventing *new* violations:
+1.  **Iterative Rollout**: If applying this to a legacy Eolica project, start small. Use the `ignoring()` method to bypass existing technical debt while preventing _new_ violations:
     ```php
     ->expect('App\Models')->not->toUse('App\Http')->ignoring('App\Models\LegacyUser');
     ```

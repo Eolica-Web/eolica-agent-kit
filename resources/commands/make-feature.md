@@ -29,6 +29,7 @@ When a user runs `/make-feature [FeatureName]`, execute the following actions:
 ## File Templates
 
 ### 1. Livewire Component (resources/views/livewire/{feature-name}.blade.php)
+
 ```php
 <?php
 
@@ -47,6 +48,7 @@ new class extends Component {
 ```
 
 ### 2. Pest Test (tests/Feature/Livewire/{FeatureName}Test.php)
+
 ```php
 <?php
 
