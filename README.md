@@ -6,49 +6,56 @@ It's designed to be scaffolded into any Laravel or frontend repository you are w
 
 ## Installation
 
-To initialize the agent components in your project, run:
+Run the following command:
 
 ```bash
 npx eolica-agent-kit
 ```
 
-This command will copy the `.agent` folder into the root of your current project.
+The CLI will ask which AI assistant you are using and copy the appropriate files into the root of your current project.
 
-### 💡 Git and IDE Configuration
+### Supported agents
 
-Make sure the `.agent` directory is **NOT added to `.gitignore`** if you want developers using tools like Cursor, Windsurf, or generic Copilots to share the same behavior. Committing these files ensures the whole team benefits from the same rules.
+| Agent              | Global rules | Agents            | Commands            | Rules                   | Skills            |
+| ------------------ | ------------ | ----------------- | ------------------- | ----------------------- | ----------------- |
+| **Antigravity**    | `GEMINI.md`  | `.agent/agents/`  | `.agent/workflows/` | `.agent/rules/`         | `.agent/skills/`  |
+| **GitHub Copilot** | `AGENTS.md`  | `.github/agents/` | `.github/prompts/`  | `.github/instructions/` | `.github/skills/` |
+
+> GitHub Copilot commands are renamed to `*.prompt.md` and rules to `*.instruction.md` to match the expected file conventions.
 
 ## What is included?
 
-### Specialized Agents (`.agent/agents/`)
+### Global Rules
 
-- `livewire-expert`: Master of anonymous components, Blade UI, and Tailwind CSS v4.
-- `filament-expert`: Rapidly builds internal admin panels using Filament PHP v5.
-- `database-architect`: Focuses on Eloquent, migrations, and schema design.
-- `code-reviewer`: Ready to enforce standards and security checks.
-- `qa-engineer`: Writes unbreakable Pest tests with Mockery.
+Copied to `GEMINI.md` (Antigravity) or `AGENTS.md` (GitHub Copilot).
+
+Enforces strict types, PHP 8.4+, Laravel 12+, Livewire over React/Vue, DTOs, Enums, and Eolica-Web's standard architecture across all agents.
+
+### Specialized Agents
+
+- `livewire-expert`: Builds interactive frontends with Livewire 4 anonymous classes, Alpine.js, Blade, and Tailwind v4.
+- `ux-engineer`: UX-focused expert in Tailwind v4, Alpine.js, and Blade Components.
+- `filament-expert`: Rapidly builds Backoffice admin panels using Filament PHP v5.
+- `database-architect`: Focused on database schema design, Eloquent, and Laravel 12 backend architecture.
+- `code-reviewer`: Enforces performance, security, and Eolica-Web coding standards in reviews.
+- `qa-engineer`: Writes tests using Pest, Mockery, and Livewire 4 testing utilities.
 - `laravel-backend-engineer`: Core architecture, routing, queues, and service container expert.
 
-### Global Rules (`.agent/rules/`)
+### Commands
 
-- `EOLICA_WEB.md`: Enforces strict types, specific PHP versions, Livewire rules over traditional React/Vue, and standard architecture.
+Slash command automation:
 
-### Commands (`.agent/commands/`)
+- `/make-feature`: Scaffolds a new Livewire feature applying Eolica-Web architectural rules.
+- `/orchestrate`: Delegates an end-to-end task to specialized agents to keep context clean and save tokens.
+- `/extract-translations`: Scans code for hardcoded strings and extracts them into Laravel language files.
 
-Slash commands automation!
+### Rules
 
-- `/make-feature`: Scaffolds everything needed for a fresh Livewire/Blade component logic block.
-- `/deploy`: Pre-flight formatter, static analysis, and Pest runner.
-- `/extract-translations`: Automatically extract strings into Laravel's language files.
+Agent-specific instruction files placed in the rules directory of each supported agent.
 
-### Educational Skills (`.agent/skills/`)
+### Educational Skills
 
-Rules on:
-
-- Laravel Architecture
-- Tailwind Design (v4 setup without `tailwind.config.js`)
-- PHP Testing Stack (Pest + Mockery)
-- PHP Coding Standard (ECS)
-- API Integrations (PSR standards setup)
-- Pest Architecture Testing (`arch()` enforcement)
-- Domain-Driven Actions (DDD, CQRS, DTOs)
+- `blade-components`: Blade component conventions and patterns.
+- `domain-driven-actions`: DDD, CQRS, and DTO patterns for Laravel.
+- `laravel-sail`: Laravel Sail setup and usage guidelines.
+- `pest-architecture`: `arch()` enforcement and Pest architecture testing patterns.
