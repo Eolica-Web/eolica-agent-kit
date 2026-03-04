@@ -1,30 +1,30 @@
 {
   "name": "eolica-agent-kit",
+  "type": "module",
+  "description": "AI Agent templates with rules, agents, commands and skills tailored for Eolica-Web",
   "version": "1.0.11",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Eolica-Web/eolica-agent-kit"
+  },
+  "keywords": [
+    "eolica-web",
+    "ai",
+    "agents"
+  ],
+  "bin": {
+    "eolica-agent-kit": "./bin/cli.mjs"
   },
   "devDependencies": {
     "@clack/prompts": "^1.1.0",
     "prettier": "^3.8.1",
     "vitest": "^4.0.18"
   },
-  "bin": {
-    "eolica-agent-kit": "./bin/cli.mjs"
-  },
-  "description": "AI Agent templates with rules, agents, commands and skills tailored for Eolica-Web",
-  "keywords": [
-    "eolica-web",
-    "ai",
-    "agents"
-  ],
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  },
   "scripts": {
     "test": "vitest"
   },
-  "type": "module"
+  "publishConfig": {
+    "access": "public"
+  }
 }
